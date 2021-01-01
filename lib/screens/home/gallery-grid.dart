@@ -27,8 +27,10 @@ class _GalleryGridState extends State<GalleryGrid> {
       photoListFuture = PhotosService.shared.fetchPhotos(page);
     } else {
       PhotosService.shared.fetchPhotos(page).then((value) {
+        setState(() {
+          photoList.addAll(value);
+        });
         isLoading = false;
-        photoList.addAll(value);
       });
     }
   }
