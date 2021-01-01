@@ -35,12 +35,37 @@ class _GalleryGridState extends State<GalleryGrid> {
     }
   }
 
-  List<Widget> renderPhotos(List<Photo> photos) {
-    return photos
+  List<Widget> renderPhotos() {
+    return photoList
         .map((photo) => HomePhotoCard(
               photo: photo,
             ))
         .toList();
+  }
+
+  Widget renderGridView() {
+    return NotificationListener<ScrollNotification>(
+      onNotification: (scrollNotification) {
+        if (scrollNotification.metrics.pixels ==
+                scrollNotification.metrics.maxScrollExtent &&
+            !isLoading) {
+          isLoading = true;
+          setState(() {
+            page += 1;
+            print("HELLO!!!!");
+            fetchPage();
+          });
+        }
+      },
+      child: GridView.count(
+        padding: EdgeInsets.only(top: 16.0, bottom: 24.0),
+        crossAxisCount: 2,
+        crossAxisSpacing: 16,
+        mainAxisSpacing: 16,
+        childAspectRatio: 2 / 3,
+        children: renderPhotos(),
+      ),
+    );
   }
 
   @override
@@ -53,29 +78,7 @@ class _GalleryGridState extends State<GalleryGrid> {
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               photoList = snapshot.data;
-
-              return NotificationListener<ScrollNotification>(
-                onNotification: (scrollNotification) {
-                  if (scrollNotification.metrics.pixels ==
-                          scrollNotification.metrics.maxScrollExtent &&
-                      !isLoading) {
-                    isLoading = true;
-                    setState(() {
-                      page += 1;
-                      print("HELLO!!!!");
-                      fetchPage();
-                    });
-                  }
-                },
-                child: GridView.count(
-                  padding: EdgeInsets.only(top: 16.0, bottom: 24.0),
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 16,
-                  mainAxisSpacing: 16,
-                  childAspectRatio: 2 / 3,
-                  children: renderPhotos(photoList),
-                ),
-              );
+              return renderGridView();
             } else if (snapshot.hasError) {
               return Text("${snapshot.error}");
             } else {
