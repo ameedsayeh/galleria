@@ -52,7 +52,6 @@ class _GalleryGridState extends State<GalleryGrid> {
           isLoading = true;
           setState(() {
             page += 1;
-            print("HELLO!!!!");
             fetchPage();
           });
         }

@@ -10,6 +10,24 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: ColorPallete.colors['appBar'],
         title: Text("homeScreenTitle".tr),
+        actions: [
+          Padding(
+            padding: EdgeInsets.only(
+              left: 16,
+              right: 16,
+              top: 16,
+              bottom: 16,
+            ),
+            child: InkWell(
+              borderRadius: BorderRadius.circular(16.0),
+              onTap: () {},
+              child: Icon(
+                Icons.favorite_border,
+                color: Colors.white,
+              ),
+            ),
+          ),
+        ],
       ),
       body: GalleryGrid(),
     );

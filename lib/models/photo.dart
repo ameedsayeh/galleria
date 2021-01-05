@@ -5,6 +5,7 @@ class Photo {
   final int height;
   final String url;
   final String downloadURL;
+  bool isFavourite = false;
 
   Photo({
     this.id,
