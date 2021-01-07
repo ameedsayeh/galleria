@@ -147,7 +147,7 @@ class _PhotoDetailsScreenState extends State<PhotoDetailsScreen> {
                   child: ClipPath(
                     clipper: PhotoClipper(),
                     child: CachedNetworkImage(
-                      imageUrl: widget.photo.downloadURL,
+                      imageUrl: widget.photo.download_url,
                       placeholder: (context, url) => LottieBuilder.asset(
                           'assets/animations/image_placeholder.json'),
                       imageBuilder: (context, imageProvider) {

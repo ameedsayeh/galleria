@@ -14,6 +14,8 @@ class Dictionary extends Translations {
           "photoOf": "Photo of",
           "addedToFavorite": "Added to favourite!",
           "removedFromFavorite": "Removed from favourite!",
+          "favouriteScreenTitle": "Favourite",
+          "noFavourite": "No Favourites yet!",
         },
         "ar": {
           "homeScreenTitle": "الرئيسية",
@@ -26,6 +28,8 @@ class Dictionary extends Translations {
           "photoOf": "صورة ",
           "addedToFavorite": "تمت الإضافة",
           "removedFromFavorite": "تمت الإزالة",
+          "favouriteScreenTitle": "المفضلة",
+          "noFavourite": "لا يوجد مفضلات بعد!",
         },
       };
 }

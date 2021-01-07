@@ -27,7 +27,7 @@ class PhotosService {
     this.database = await openDatabase('photos.db', version: 1,
         onCreate: (Database db, int version) async {
       await db.execute(
-          'CREATE TABLE fav_photo (id TEXT PRIMARY KEY, width INTEGER, height INTEGER, author TEXT, url TEXT, downloadURL TEXT)');
+          'CREATE TABLE fav_photo (id TEXT PRIMARY KEY, width INTEGER, height INTEGER, author TEXT, url TEXT, download_url TEXT)');
     });
 
     return this.database;
@@ -36,7 +36,7 @@ class PhotosService {
   void addToFavourite(Photo photo) async {
     await database.transaction((txn) async {
       await txn.rawInsert(
-          "INSERT INTO fav_photo(id, width, height, author, url, downloadURL) VALUES('${photo.id}', ${photo.width}, ${photo.height}, '${photo.author}', '${photo.url}', '${photo.downloadURL}')");
+          "INSERT INTO fav_photo(id, width, height, author, url, download_url) VALUES('${photo.id}', ${photo.width}, ${photo.height}, '${photo.author}', '${photo.url}', '${photo.download_url}')");
     });
   }
 
@@ -57,6 +57,11 @@ class PhotosService {
 
   Future<List<Photo>> getFavouriteList() async {
     List<Map> list = await database.rawQuery('SELECT * FROM fav_photo');
-    return list.map((e) => Photo.fromJson(e)).toList();
+
+    return list.map((e) {
+      var photo = Photo.fromJson(e);
+      photo.isFavourite = true;
+      return photo;
+    }).toList();
   }
 }

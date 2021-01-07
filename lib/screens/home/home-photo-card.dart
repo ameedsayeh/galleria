@@ -63,11 +63,11 @@ class _HomePhotoCardState extends State<HomePhotoCard>
             Hero(
               tag: "photo.${widget.photo.id}",
               child: CachedNetworkImage(
-                imageUrl: widget.photo.getThumbnailURL(),
+                imageUrl: widget.photo.getVerticalThumbnailURL(),
                 placeholder: (context, url) => LottieBuilder.asset(
                     'assets/animations/image_placeholder.json'),
                 fadeInDuration: Duration(),
-                fit: BoxFit.fill,
+                fit: BoxFit.cover,
               ),
             ),
             Align(

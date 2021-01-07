@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:galleria/globals/color-pallette.dart';
-import 'package:galleria/screens/favourite/favourite-screen.dart';
-import 'package:galleria/screens/home/gallery-grid.dart';
+import 'package:galleria/screens/home/home-screen.dart';
 import 'package:get/get.dart';
 
-class HomeScreen extends StatelessWidget {
+import 'favourite-gallery-list.dart';
+
+class FavouriteScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: ColorPallete.colors['appBar'],
-        title: Text("homeScreenTitle".tr),
+        title: Text("favouriteScreenTitle".tr),
         actions: [
           Padding(
             padding: EdgeInsets.all(16.0),
@@ -18,18 +19,18 @@ class HomeScreen extends StatelessWidget {
               borderRadius: BorderRadius.circular(16.0),
               onTap: () {
                 Get.offAll(
-                  FavouriteScreen(),
+                  HomeScreen(),
                 );
               },
               child: Icon(
-                Icons.favorite_border,
+                Icons.home,
                 color: Colors.white,
               ),
             ),
           ),
         ],
       ),
-      body: GalleryGrid(),
+      body: FavouriteGalleryList(),
     );
   }
 }
