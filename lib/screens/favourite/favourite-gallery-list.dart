@@ -61,7 +61,7 @@ class _FavouriteGalleryListState extends State<FavouriteGalleryList> {
                   Get.to(PhotoDetailsScreen(
                     photo: e,
                     updateState: (state) {
-                      e.isFavourite = 
+                      e.isFavourite = state;
                     },
                   ));
                 },
