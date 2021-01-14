@@ -1,12 +1,9 @@
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:galleria/globals/color-pallette.dart';
 import 'package:galleria/models/photo.dart';
 import 'package:galleria/screens/details/photo-details-screen.dart';
 import 'package:galleria/services/photos-service.dart';
 import 'package:get/get.dart';
-import 'package:lottie/lottie.dart';
 
 import 'favourite-photo-card.dart';
 
@@ -51,8 +48,6 @@ class _FavouriteGalleryListState extends State<FavouriteGalleryList> {
   }
 
   Widget renderListView() {
-    filterList();
-
     if (this.favouritePhotosList.length == 0) {
       return Center(
         child: Text("noFavourite".tr),
@@ -61,13 +56,23 @@ class _FavouriteGalleryListState extends State<FavouriteGalleryList> {
     return ListView(
       children: this
           .favouritePhotosList
-          .map((e) => FavouritePhotoCard(
-                photo: e,
-                parentUpdate: (newState) {
-                  e.isFavourite = newState;
-
-                  setState(() {});
+          .map((e) => GestureDetector(
+                onTap: () {
+                  Get.to(PhotoDetailsScreen(
+                    photo: e,
+                    updateState: (state) {
+                      e.isFavourite = 
+                    },
+                  ));
                 },
+                child: FavouritePhotoCard(
+                  photo: e,
+                  parentUpdate: (newState) {
+                    e.isFavourite = newState;
+
+                    setState(() {});
+                  },
+                ),
               ))
           .toList(),
     );
