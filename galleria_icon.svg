@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="133px" height="133px" viewBox="0 0 133 133" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="background: #FFFFFF;">
+    <title>Untitled</title>
+    <g id="Icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="diaphragm" transform="translate(8.000000, 8.000000)" fill-rule="nonzero">
+            <path d="M95.532326,14 L66,36.798899 L115.483161,75 C116.473289,70.5502242 117,65.912327 117,61.1458018 C117,42.0681786 108.603166,25.0370807 95.532326,14 L95.532326,14 Z" id="Path" fill="#2CB77C"></path>
+            <path d="M89,8.78313132 C80.3830021,3.21281847 70.2653284,0 59.452198,0 C47.8311825,0 37.0149414,3.71260069 28,10.0725883 L39.3308346,47 L89,8.78313132 Z" id="Path" fill="#34C5EF"></path>
+            <path d="M21.4534192,14 C8.32592228,24.908438 0,41.0534277 0,59.0402887 C0,64.5672956 0.788910918,69.91924 2.25867266,75 L42,75 L21.4534192,14 Z" id="Path" fill="#520C4D"></path>
+            <path d="M4,80 C12.9313559,101.002548 33.5717883,116.000159 57.8171444,117 L70,80 L4,80 Z" id="Path" fill="#DF1E5A"></path>
+            <path d="M61,117 C84.4390035,115.101748 104.08554,99.6372925 112,78.5186862 L80.8924592,56 L61,117 Z" id="Path" fill="#ECB32E"></path>
+        </g>
+    </g>
+</svg>

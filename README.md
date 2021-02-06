@@ -1,16 +1,18 @@
-# galleria
+# Galleria
 
-A new Flutter project.
+![](galleria_icon.svg)
 
-## Getting Started
+A Flutter gallery app
 
-This project is a starting point for a Flutter application.
+## Sections
 
-A few resources to get you started if this is your first Flutter project:
+The app works as a gallery that allows users to scroll and view the images, add to favourite and save em in a local db or visit the website of the image.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Content
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+The app uses [Picsum Photos](https://picsum.photos/) API to fetch images from [Unsplash](https://unsplash.com/).
+
+## Demo
+
+![](demo1.gif)
+![](demo2.gif)
